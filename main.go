@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"strings"
-	"strconv"
-	"flag"
 	"bytes"
-	"log"
-	r "javierlvelasquez.com/resistor-color-code-calculator/resistance"
-	p "javierlvelasquez.com/resistor-color-code-calculator/parser"
+	"flag"
+	"fmt"
 	"javierlvelasquez.com/resistor-color-code-calculator/bands"
+	p "javierlvelasquez.com/resistor-color-code-calculator/parser"
+	r "javierlvelasquez.com/resistor-color-code-calculator/resistance"
+	"log"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -22,8 +22,8 @@ func main() {
 		fractionals, _ := flags["fractional"].(string)
 		prefix, _ := flags["prefix"].(string)
 		floatTolerance, _ := strconv.ParseFloat(flags["tolerance"].(string), 32)
-		tolerance :=  float32(floatTolerance)
-		bands, err := p.DetermineBands(stringToInts(integers),stringToInts(fractionals),prefix, tolerance)
+		tolerance := float32(floatTolerance)
+		bands, err := p.DetermineBands(stringToInts(integers), stringToInts(fractionals), prefix, tolerance)
 		if err != nil {
 			log.Fatal(err)
 		} else {
@@ -69,11 +69,11 @@ func stringToInts(s string) []int {
 
 func parseFlags() map[string]interface{} {
 	var flags = make(map[string]interface{})
-	var mode, tolerance, fractional,integers,  prefix, bands string
+	var mode, tolerance, fractional, integers, prefix, bands string
 	flag.StringVar(&mode, "mode", "calculate", "the mode. \"calculate\" or \"parse\".")
 	flag.StringVar(&tolerance, "tolerance", "", "The tolerance.")
 	flag.StringVar(&integers, "integers", "", "Integer component of resistance.")
- 	flag.StringVar(&fractional, "fractional", "", "Fractional component of resistance.")
+	flag.StringVar(&fractional, "fractional", "", "Fractional component of resistance.")
 	flag.StringVar(&prefix, "prefix", "", "Resistance metric prefix.")
 	flag.StringVar(&bands, "bands", "Yellow,Violet,Orange,Gold", "A comma delimited list of colors")
 
