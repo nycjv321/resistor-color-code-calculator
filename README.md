@@ -10,6 +10,10 @@
  Clone this project to "$GOPATH/src/javierlvelasquez.com/resistor-color-code-calculator-cli".
  The package structure refers to javierlvelasquez.com and not github.com
 
+### Dependencies
+Download the [lib](https://github.com/nycjv321/resistor-color-code-calculator) to 
+"$GOPATH/src/javierlvelasquez.com/resistor-color-code-calculator"
+
 ## Examples
 
 ### Calculating Resistance
