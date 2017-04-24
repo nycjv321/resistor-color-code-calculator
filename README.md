@@ -11,7 +11,7 @@
  The package structure refers to javierlvelasquez.com and not github.com
 
 ### Dependencies
-Download the [lib](https://github.com/nycjv321/resistor-color-code-calculator) to 
+Download the [lib](https://github.com/nycjv321/resistor-color-code-lib) to 
 "$GOPATH/src/javierlvelasquez.com/resistor-color-code-calculator"
 
 ## Examples
